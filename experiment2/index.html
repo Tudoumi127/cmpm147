@@ -46,16 +46,38 @@
 			<div class="minor-section">
 				<h2>Description</h2>
 				<p>What are you trying to acomplish with this experiment?</p>
+				<p>I wanted to mimic the feeling of a field sprouting flowers. The flowers appear when the screen is clicked and fade on their own.
+					I tried to make it so the flower locations would be random with each click but since the random was tied to the random seed,
+					I couldn't really find a way to make it work. But I did add an extra blue flower that spawned at a random size wherever the cursor clicked.
+
+				</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Technical</h2>
 				<p>Describe in detail what you did technically and how it works?</p>
+				<p>I based my code off of the example provided, the mountains were made using the same createShape process but with differen parameters.
+					The flowers were also mostly based off the example living impression, but I also made a flowerFlag that when true (turns true on click) would spawn flowers
+					on click and added a counter that decremented their opacity over time to make them slowly fade away. I looked it up and max opacity in p5js
+					is 255, so in the for loop for the flowers, I had it decrement from 255 and once the opacity hit 0 or less, it would change the flowerFlag to false.
+					In the mousePressed function I would reset it to true so that the user could click as many times as they wanted.
+
+					If the user hits "reimagine", a different random number is chosen and it will regenerate the landscape and the flower locations accordingly.
+
+				</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Reflection</h2>
 				<p>Each person that worked on the code should reflect on the process, the difficulties, and the successes of the experiment.</p>
+				<p>I worked on this project myself but I got some help from a friend to figure out how to use the mousePressed function, mostly because I was trying to use mouseClicked and it wasn't working. 
+					I also got a lot of code from the example living impression provided. I think the most difficult part was trying to figure out a way
+					to make the flowers spawn at completely random locations with every click instead of only being able to change their spawn locations by hitting "reimagine". 
+					I was not able to figure that out but I think I could if I had more time, or at least find some completely different way of going about it. I also changed
+					it so that canvas is an object and that only clicks registered inside the canvas would spawn flowers because I didn't like how clicking "reimagine" would spawn flowers. Other than that
+					 though I was able to successfully figure out how to make the flowers spawn on click and fade over time so I consider it a success.
+
+				</p>
 			</div>
 
 		</section>
