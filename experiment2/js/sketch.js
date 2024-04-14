@@ -29,7 +29,9 @@ function setup() {
   });
   resizeScreen();
 
-  createButton("reimagine").mousePressed(() => {seed++; count = 0;});
+  let button = createButton("reimagine");
+  button.mousePressed(() => {seed++; count = 0;});
+  button.parent("reimagine-container");
   canvas.mousePressed(() => {flowerFlag = true; clickedFlowers.push([mouseX, mouseY]);});
 }
 
