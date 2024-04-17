@@ -17,6 +17,11 @@ function draw() {
             taps.splice(i, 1);
         }
     }
+
+    // save canvas because specs said so
+    if (keyIsPressed && key === 's' || key === 'S') {
+        saveCanvas('confetti.png');
+    }
 }
 
 function mousePressed() {
@@ -64,7 +69,7 @@ class Particle {
     draw() {
         noStroke();
         fill(...this.color);
-        if(true) {
+        if(this.y < 850) {
             if (this.shape == 'ellipse') {
                ellipse(this.x, this.y, this.size, this.size);
             } else if (this.shape == 'square'){
