@@ -29,10 +29,6 @@ function draw() {
     const y = frameCount % height;
     const range = getPixelRange(y);
 
-    let amount = map(mouseX, 0, width, 1, 3);
-    if(amount < 0) amount = 0;
-    drawingContext.filter = 'blur('+structuredClone(amount)+'px)';
-
     for (let x = 0; x < width; x++) {
         const leftX = constrain(x - range, 0, width);
         const rightX = constrain(x + range, 0, width);
@@ -43,7 +39,6 @@ function draw() {
         let sampleY = random(topY, bottomY);
 
         const pixelColor = images[counter].get(sampleX, sampleY);
-        //const pixelColor = [random(0,255), random(0,255), random(0,255)];
 
         stroke(pixelColor);
         point(x, y);
